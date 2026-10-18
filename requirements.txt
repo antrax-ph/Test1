@@ -1,0 +1,6 @@
+quart==0.19.4
+camoufox==0.5.8
+patchright==1.0.6
+playwright==1.42.0
+hypercorn==0.16.0
+aiofiles==23.2.1
