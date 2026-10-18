@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.railpack.com",
+  "provider": "python",
+  "packages": {
+    "python": "3.11",
+    "libnss3": "*",
+    "libatk1.0-0": "*",
+    "libatk-bridge2.0-0": "*",
+    "libcups2": "*",
+    "libdrm2": "*",
+    "libxkbcommon0": "*",
+    "libxcomposite1": "*",
+    "libxdamage1": "*",
+    "libxfixes3": "*",
+    "libxrandr2": "*",
+    "libgbm1": "*",
+    "libpango-1.0-0": "*",
+    "libcairo2": "*",
+    "libasound2": "*",
+    "libatspi2.0-0": "*",
+    "libx11-xcb1": "*",
+    "libgtk-3-0": "*"
+  },
+  "steps": {
+    "install": {
+      "commands": [
+        "pip install --no-cache-dir -r requirements.txt",
+        "python -m playwright install chromium"
+      ]
+    }
+  },
+  "deploy": {
+    "startCommand": "hypercorn turnstile_solver:app -b 0.0.0.0:${PORT:-5000}"
+  }
+}
